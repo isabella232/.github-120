@@ -6,9 +6,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-
   replicate_changes:
-
       runs-on: ubuntu-latest
 
       steps:
