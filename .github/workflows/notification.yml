@@ -8,7 +8,7 @@ jobs:
   slack-notification:
     runs-on: ubuntu-latest
     steps:
-    - name: Pull Request Notification
+    - name: Pull Request Slack Notification
       env:
         SLACK_WEBHOOK_URL : ${{ secrets.SLACK_WEBHOOK_URL }}
         PULL_REQUEST_NUMBER : ${{ github.event.pull_request.number }}
@@ -22,7 +22,7 @@ jobs:
         PULL_REQUEST_BASE_BRANCH_OWNER: ${{ github.event.pull_request.base.repo.owner.login }}
         PULL_REQUEST_BASE_BRANCH_NAME : ${{ github.event.pull_request.base.ref }}
         IS_SEND_HERE_MENTION : true
-        MAKE_PRETTY : false
+        MAKE_PRETTY : true
         MAKE_COMPACT : false
         IS_PR_FROM_FORK: false
       uses: jun3453/slack-pr-open-notification-action@v1.2.0
