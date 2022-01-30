@@ -5,10 +5,10 @@ on:
     types: [opened, reopened, ready_for_review]
 
 jobs:
-  slack-notification:
+  pr-slack-notification:
     runs-on: ubuntu-latest
     steps:
-    - name: Pull Request Slack Notification
+    - name: Notify Slack
       env:
         SLACK_WEBHOOK_URL : ${{ secrets.SLACK_WEBHOOK_URL }}
         PULL_REQUEST_NUMBER : ${{ github.event.pull_request.number }}
