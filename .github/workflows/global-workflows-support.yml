@@ -2,8 +2,8 @@ name: Global workflow to rule them all
 
 on:
   push:
-      branches: [ main ]
-  workflow_dispatch: {}
+      branches: 
+        - main
 
 jobs:
   replicate_changes:
@@ -12,6 +12,7 @@ jobs:
       steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
       - name: Replicating global workflows
         uses: derberg/global-workflows-support@v0.2.0
         with:
@@ -22,3 +23,4 @@ jobs:
           committer_email: dev@vertigoventures.com
           # it is both, commit message and PR title
           commit_message: "ci: update global workflows"
+          topics_to_include: workflows
