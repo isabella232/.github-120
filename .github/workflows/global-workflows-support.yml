@@ -17,7 +17,7 @@ jobs:
       - name: Replicating global workflows
         uses: derberg/global-workflows-support@v0.2.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           # this action will not replicate to other repos workflows listed here
           files_to_ignore: global-workflows-support.yml
           committer_username: vv-bot
