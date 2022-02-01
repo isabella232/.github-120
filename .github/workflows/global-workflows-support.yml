@@ -17,7 +17,6 @@ jobs:
         uses: derberg/global-workflows-support@v0.5.0
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          repos_to_ignore: .github
           files_to_ignore: global-workflows-support.yml
           committer_username: vvdevteam
           committer_email: dev@vertigoventures.com
