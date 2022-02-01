@@ -14,13 +14,12 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Replicating global workflows
-        uses: derberg/global-workflows-support@v0.2.0
+        uses: derberg/global-workflows-support@v0.5.0
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          # this action will not replicate to other repos workflows listed here
+          repos_to_ignore: .github
           files_to_ignore: global-workflows-support.yml
           committer_username: vvdevteam
           committer_email: dev@vertigoventures.com
-          # it is both, commit message and PR title
           commit_message: "ci: update global workflows"
           topics_to_include: "workflows"
